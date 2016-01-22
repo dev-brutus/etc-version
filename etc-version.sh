@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd /etc
-DATE=`date -Iseconds`
+DATE=$(/bin/date -Iseconds)
 
-git add --all .
-git commit -m "Autocommit: $DATE"
+/usr/bin/git add --all .
+/usr/bin/git commit -m "Autocommit: $DATE"
