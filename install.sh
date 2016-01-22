@@ -4,6 +4,7 @@ SCRIPT_NAME=`readlink -f "$0"`
 DISTR_DIR=`dirname "$SCRIPT_NAME"`
 SUDO="sudo -H"
 GIT="$SUDO /usr/bin/git"
+CRON_SCRIPT='/etc/cron.hourly/etc-version'
 
 cd /etc
 if [ ! -d .git ]
@@ -24,6 +25,6 @@ then
   $GIT config user.email 'etc-auto-commiter@example.com'
 fi
 
-$SUDO cp "$DISTR_DIR/etc-version.sh" /etc/cron.hourly/etc-version
-$SUDO chmod 755 /etc/cron.hourly/etc-version
-$SUDO chown root:root /etc/cron.hourly/etc-version
+$SUDO cp "$DISTR_DIR/etc-version.sh" "$CRON_SCRIPT"
+$SUDO chmod 755 "$CRON_SCRIPT"
+$SUDO chown root:root "$CRON_SCRIPT"
