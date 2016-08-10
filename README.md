@@ -4,4 +4,5 @@ This tool automatically creates snapshots of your `/etc` directory every hour. I
 
 ## Install
 
-Just run `sudo ./install.sh`
+1. Install `git`: `sudo apt-get install git`.
+1. That run `sudo ./install.sh`
